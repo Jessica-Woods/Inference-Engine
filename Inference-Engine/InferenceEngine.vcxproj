@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,10 +140,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BC.cpp" />
     <ClCompile Include="Clause.cpp" />
     <ClCompile Include="FC.cpp" />
     <ClCompile Include="InferenceEngine.cpp" />
     <ClCompile Include="KnowledgeBase.cpp" />
+    <ClCompile Include="TT.cpp" />
     <ClCompile Include="util\file.cpp" />
     <ClCompile Include="util\map.cpp" />
     <ClCompile Include="util\string.cpp" />
@@ -152,8 +155,10 @@
   <ItemGroup>
     <ClInclude Include="Clause.h" />
     <ClInclude Include="FC.h" />
+    <ClInclude Include="BC.h" />
     <ClInclude Include="InferenceEngine.h" />
     <ClInclude Include="KnowledgeBase.h" />
+    <ClInclude Include="TT.h" />
     <ClInclude Include="util\file.h" />
     <ClInclude Include="util\map.h" />
     <ClInclude Include="util\string.h" />

@@ -48,6 +48,12 @@
     <ClCompile Include="FC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InferenceEngine.h">
@@ -75,6 +81,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

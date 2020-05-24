@@ -9,7 +9,7 @@
 
 FC::FC(KnowledgeBase knowledgeBase) : kb(knowledgeBase) {}
 
-std::vector<std::string> FC::entails(std::string query) {
+std::optional<std::vector<std::string>> FC::entails(std::string query) {
   std::vector<std::string> result;
 
   std::map<Clause, int> count;
@@ -50,5 +50,5 @@ std::vector<std::string> FC::entails(std::string query) {
   }
 
   // We return an empty vector when we haven't found a solution.
-  return std::vector<std::string>{};
+  return std::nullopt;
 }

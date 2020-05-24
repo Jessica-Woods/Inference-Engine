@@ -21,13 +21,8 @@ bool Clause::premiseContains(std::string symbol) {
   return false;
 }
 
-const std::vector<std::string>& Clause::getPremise() {
-  return premise;
-}
-
-std::string Clause::getConclusion() {
-  return conclusion;
-}
+const std::vector<std::string>& Clause::getPremise() { return premise; }
+std::string Clause::getConclusion() { return conclusion; }
 
 bool operator<(const Clause& lhs, const Clause& rhs) {
   return std::tie(lhs.premise, lhs.conclusion) < std::tie(rhs.premise, rhs.conclusion);

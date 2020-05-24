@@ -3,8 +3,10 @@
 #include "util/vector.h"
 
 #include "KnowledgeBase.h"
-#include "FC.h"
 
+#include "TT.h"
+#include "FC.h"
+#include "BC.h"
 
 std::string InferenceEngine::runMethod(std::string method, std::vector<std::string>& lines) {
   //ProblemFile() class for parsing later
@@ -30,15 +32,22 @@ std::string InferenceEngine::runMethod(std::string method, std::vector<std::stri
   // Forward Chaining Algorithm
   else if (method == "FC") {
     auto result = FC(knowledgeBase).entails(query);
-    if (result.empty()) {
-      return "NO:";
+    if (result) {
+      return "YES: " + util::vector::unsplit(*result, ", ");
     } else {
-      return "YES: " + util::vector::unsplit(result, ", ");
+      return "NO:";
     }
   }
 
   // Backward Chaining Algorithm
-  else if (method == "BC") { return ""; }
+  else if (method == "BC") {
+    auto result = BC(knowledgeBase).entails(query);
+    if (result) {
+      return "YES: " + util::vector::unsplit(*result, ", ");
+    } else {
+      return "NO:";
+    }
+  }
   else { return "Unknown Method"; } //exception
 }
 
