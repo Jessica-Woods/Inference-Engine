@@ -16,5 +16,10 @@ public:
   bool premiseEmpty();
   bool premiseContains(std::string premise);
 
+  const std::vector<std::string>& getPremise();
   std::string getConclusion();
+
+  friend bool operator<(const Clause& lhs, const Clause& rhs);
 };
+
+bool operator<(const Clause& lhs, const Clause& rhs);

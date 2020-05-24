@@ -10,5 +10,8 @@ private:
   KnowledgeBase kb;
 public:
   FC(KnowledgeBase kb);
-  std::string entails(std::string query);
+
+  // if we return a empty vector from here it means 
+  // we did not find a solution 
+  std::vector<std::string> entails(std::string query);
 };

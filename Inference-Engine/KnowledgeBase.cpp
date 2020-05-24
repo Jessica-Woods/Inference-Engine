@@ -5,19 +5,21 @@ KnowledgeBase::KnowledgeBase(std::vector<Clause> clauses) {
   this->clauses = clauses;
 }
 
-std::queue<std::string> KnowledgeBase::createAgenda() {
-  std::queue<std::string> agenda;
+std::set<std::string> KnowledgeBase::getSymbols() {
+  std::set<std::string> symbols;
   for (auto clause : clauses) {
-    // If the premise vector is empty we add the conclusion to the agenda
-    if (clause.premiseEmpty()) {
-      agenda.push(clause.getConclusion());
-    }
+    symbols.insert(clause.getPremise().begin(), clause.getPremise().end());
+    symbols.insert(clause.getConclusion());
   }
 
-  return agenda;
+  return symbols;
 }
 
-std::vector<Clause> KnowledgeBase::getClauses(std::string symbol) {
+const std::vector<Clause>& KnowledgeBase::getClauses() {
+  return clauses;
+}
+
+std::vector<Clause> KnowledgeBase::getClausesWithPremise(std::string symbol) {
   std::vector<Clause> result;
   for (auto clause : clauses) {
     if (clause.premiseContains(symbol)) {

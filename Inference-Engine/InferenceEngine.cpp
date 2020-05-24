@@ -1,5 +1,6 @@
 #include "InferenceEngine.h"
 #include "util/file.h"
+#include "util/vector.h"
 
 #include "KnowledgeBase.h"
 #include "FC.h"
@@ -25,8 +26,17 @@ std::string InferenceEngine::runMethod(std::string method, std::vector<std::stri
 
   // Truth Table Checking Algorithm
   if (method == "TT") { return "Truth Table Algorithm"; }
+
   // Forward Chaining Algorithm
-  else if (method == "FC") { return FC(knowledgeBase).entails(query); }
+  else if (method == "FC") {
+    auto result = FC(knowledgeBase).entails(query);
+    if (result.empty()) {
+      return "NO:";
+    } else {
+      return "YES: " + util::vector::unsplit(result, ", ");
+    }
+  }
+
   // Backward Chaining Algorithm
   else if (method == "BC") { return ""; }
   else { return "Unknown Method"; } //exception
