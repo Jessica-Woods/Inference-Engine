@@ -139,7 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Clause.cpp" />
+    <ClCompile Include="FC.cpp" />
     <ClCompile Include="InferenceEngine.cpp" />
+    <ClCompile Include="KnowledgeBase.cpp" />
     <ClCompile Include="util\file.cpp" />
     <ClCompile Include="util\map.cpp" />
     <ClCompile Include="util\string.cpp" />
@@ -147,7 +150,10 @@
     <ClCompile Include="util\vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Clause.h" />
+    <ClInclude Include="FC.h" />
     <ClInclude Include="InferenceEngine.h" />
+    <ClInclude Include="KnowledgeBase.h" />
     <ClInclude Include="util\file.h" />
     <ClInclude Include="util\map.h" />
     <ClInclude Include="util\string.h" />

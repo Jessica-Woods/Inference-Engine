@@ -39,6 +39,15 @@
     <ClCompile Include="util\vector.cpp">
       <Filter>Source Files\util</Filter>
     </ClCompile>
+    <ClCompile Include="KnowledgeBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Clause.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InferenceEngine.h">
@@ -58,6 +67,15 @@
     </ClInclude>
     <ClInclude Include="util\vector.h">
       <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="KnowledgeBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Clause.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FC.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
