@@ -145,6 +145,7 @@
     <ClCompile Include="FC.cpp" />
     <ClCompile Include="InferenceEngine.cpp" />
     <ClCompile Include="KnowledgeBase.cpp" />
+    <ClCompile Include="ProblemFile.cpp" />
     <ClCompile Include="TT.cpp" />
     <ClCompile Include="util\file.cpp" />
     <ClCompile Include="util\map.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="BC.h" />
     <ClInclude Include="InferenceEngine.h" />
     <ClInclude Include="KnowledgeBase.h" />
+    <ClInclude Include="ProblemFile.h" />
     <ClInclude Include="TT.h" />
     <ClInclude Include="util\file.h" />
     <ClInclude Include="util\map.h" />

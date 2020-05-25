@@ -48,6 +48,17 @@ void util::string::rtrim(std::string& s) {
     }).base(), s.end());
 }
 
+std::string& util::string::strip_whitespace(std::string& s) {
+  for (auto ch = s.begin(); ch != s.end();) {
+    if (std::isspace(*ch)) {
+      ch = s.erase(ch);
+    } else {
+      ++ch;
+    }
+  }
+  return s;
+}
+
 // trim from both ends (in place)
 std::string& util::string::trim(std::string& s) {
   util::string::ltrim(s);

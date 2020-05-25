@@ -2,6 +2,9 @@
 #include "util/file.h"
 #include "util/vector.h"
 
+#include <string>
+
+#include "ProblemFile.h"
 #include "KnowledgeBase.h"
 
 #include "TT.h"
@@ -9,22 +12,25 @@
 #include "BC.h"
 
 std::string InferenceEngine::runMethod(std::string method, std::vector<std::string>& lines) {
-  //ProblemFile() class for parsing later
+  ProblemFile file(lines);
+  KnowledgeBase knowledgeBase(file.getClauses());
+  std::string query = file.getQuery();
 
-  KnowledgeBase knowledgeBase({
-    Clause({"p2"}, "p3"),
-    Clause({"p3"}, "p1"),
-    Clause({"c"}, "e"),
-    Clause({"b", "e"}, "f"),
-    Clause({"f", "g"}, "h"),
-    Clause({"p1"}, "d"),
-    Clause({"p1", "p3"}, "c"),
-    Clause({}, "a"),
-    Clause({}, "b"),
-    Clause({}, "p2"),
-  });
+  // TODO: move to tests
+  //KnowledgeBase knowledgeBase({
+  //  Clause({"p2"}, "p3"),
+  //  Clause({"p3"}, "p1"),
+  //  Clause({"c"}, "e"),
+  //  Clause({"b", "e"}, "f"),
+  //  Clause({"f", "g"}, "h"),
+  //  Clause({"p1"}, "d"),
+  //  Clause({"p1", "p3"}, "c"),
+  //  Clause({}, "a"),
+  //  Clause({}, "b"),
+  //  Clause({}, "p2"),
+  //});
 
-  std::string query = "d";
+  //std::string query = "d";
 
   // Truth Table Checking Algorithm
   if (method == "TT") { 

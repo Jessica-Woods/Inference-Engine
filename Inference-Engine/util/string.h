@@ -32,6 +32,8 @@ namespace util {
     // Solution from: https://stackoverflow.com/a/217605
     void rtrim(std::string& s);
 
+    std::string& strip_whitespace(std::string& s);
+
     std::string readInput();
 
     std::tuple<std::string, std::string> split_first(std::string str, std::string separator);
