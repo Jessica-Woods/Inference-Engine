@@ -27,8 +27,15 @@ std::string InferenceEngine::runMethod(std::string method, std::vector<std::stri
   std::string query = "d";
 
   // Truth Table Checking Algorithm
-  if (method == "TT") { return "Truth Table Algorithm"; }
-
+  if (method == "TT") { 
+    auto result = TT(knowledgeBase).entails(query);
+    if (result) {
+      return "YES: " + std::to_string(*result);
+    }
+    else {
+      return "NO:";
+    }
+  }
   // Forward Chaining Algorithm
   else if (method == "FC") {
     auto result = FC(knowledgeBase).entails(query);

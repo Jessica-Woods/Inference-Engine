@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <set>
+#include <map>
 
 #include "Clause.h"
 
@@ -19,4 +20,6 @@ public:
   const std::vector<Clause>& getClauses();
   std::vector<Clause> getClausesWithPremise(std::string premise);
   std::vector<Clause> getClausesWithConclusion(std::string conclusion);
+
+  bool runModel(const std::map<std::string, bool>& model);
 };

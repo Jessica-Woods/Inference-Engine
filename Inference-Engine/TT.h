@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <optional>
 
 #include "KnowledgeBase.h"
 
@@ -11,7 +12,6 @@ private:
 public:
   TT(KnowledgeBase kb);
 
-  // if we return a empty vector from here it means 
-  // we did not find a solution 
-  std::vector<std::string> entails(std::string query);
+  std::optional<int> entails(std::string query);
+  std::optional<int> checkAll(std::string query, std::set<std::string> symbols, std::map<std::string, bool> model);
 };

@@ -50,3 +50,21 @@ std::vector<Clause> KnowledgeBase::getClausesWithConclusion(std::string symbol) 
 
   return result;
 }
+
+bool KnowledgeBase::runModel(const std::map<std::string, bool>& model) {
+  for ( auto clause : clauses ) {
+    if ( clause.premiseEmpty() ) {
+      if ( model.at(clause.getConclusion()) == false ) { return false; }
+    } else {
+      bool premiseValue = true;
+      for (auto p : clause.getPremise()) {
+        premiseValue = premiseValue && model.at(p);
+      }
+      if (premiseValue && !model.at(clause.getConclusion())) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
