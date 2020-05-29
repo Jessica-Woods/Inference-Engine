@@ -16,6 +16,11 @@ ProblemFile::ProblemFile(std::vector <std::string> lines) {
     
     for (auto cs : clauseStrings) {
       util::string::strip_whitespace(cs);
+
+      if (cs == "") {
+        continue;
+      }
+
       auto split = util::string::split_first(cs, "=>");
       auto lhs = std::get<0>(split);
       auto rhs = std::get<1>(split);

@@ -16,22 +16,6 @@ std::string InferenceEngine::runMethod(std::string method, std::vector<std::stri
   KnowledgeBase knowledgeBase(file.getClauses());
   std::string query = file.getQuery();
 
-  // TODO: move to tests
-  //KnowledgeBase knowledgeBase({
-  //  Clause({"p2"}, "p3"),
-  //  Clause({"p3"}, "p1"),
-  //  Clause({"c"}, "e"),
-  //  Clause({"b", "e"}, "f"),
-  //  Clause({"f", "g"}, "h"),
-  //  Clause({"p1"}, "d"),
-  //  Clause({"p1", "p3"}, "c"),
-  //  Clause({}, "a"),
-  //  Clause({}, "b"),
-  //  Clause({}, "p2"),
-  //});
-
-  //std::string query = "d";
-
   // Truth Table Checking Algorithm
   if (method == "TT") { 
     auto result = TT(knowledgeBase).entails(query);
@@ -71,6 +55,5 @@ std::string InferenceEngine::runFromFile(std::string filepath, std::string metho
 
 std::string InferenceEngine::run(std::string filename, std::vector<std::string> lines, std::string method) {
   std::string result = runMethod(method, lines);
-  // clean output
   return result;
 }

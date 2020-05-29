@@ -19,6 +19,12 @@
     <Filter Include="Header Files\util">
       <UniqueIdentifier>{c2dc04fb-c072-4249-b0eb-84f2afa722ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\algorithms">
+      <UniqueIdentifier>{8f394731-73f2-4ae3-9c34-ef66362f9be0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\algorithms">
+      <UniqueIdentifier>{7b79b961-61d9-465f-b0a7-0b14e5440478}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InferenceEngine.cpp">
@@ -45,17 +51,17 @@
     <ClCompile Include="Clause.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FC.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TT.cpp">
+    <ClCompile Include="ProblemFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BC.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\algorithms</Filter>
     </ClCompile>
-    <ClCompile Include="ProblemFile.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="FC.cpp">
+      <Filter>Source Files\algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="TT.cpp">
+      <Filter>Source Files\algorithms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,17 +89,17 @@
     <ClInclude Include="Clause.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FC.h">
+    <ClInclude Include="ProblemFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TT.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="FC.h">
+      <Filter>Header Files\algorithms</Filter>
     </ClInclude>
     <ClInclude Include="BC.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ProblemFile.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\algorithms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
